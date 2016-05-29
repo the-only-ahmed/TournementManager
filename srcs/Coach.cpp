@@ -1,5 +1,7 @@
 #include "Coach.hpp"
 
+Coach::Coach() : APerson("", "", "", 0) {}
+
 Coach::Coach(std::string name, std::string pName, std::string nat, int age,
             CoachGrade grade) : APerson(name, pName, nat, age)
 {

@@ -14,8 +14,11 @@ Match::MatchException::~MatchException() throw() { return; }
 
 /*	MATCH	*/
 
-Match::Match(int n, Refree const& ref) {
+Match::Match(int n, Refree const& ref) : _ref(ref) {
 	this->_numTour = n;
+}
+
+void	Match::setRefree(Refree const& ref) {
 	this->_ref = ref;
 }
 

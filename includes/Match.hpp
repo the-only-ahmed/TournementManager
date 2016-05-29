@@ -17,6 +17,7 @@ class Match
 	public:
 		Match(int n, Refree const& ref);
 
+		void	setRefree(Refree const& ref);
 		void	setTeams(Team t1, Team t2);
 		void	setScore(int t1, int t2);
 

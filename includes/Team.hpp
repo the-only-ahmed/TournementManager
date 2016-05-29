@@ -16,7 +16,8 @@ class Team
         int                 draws;
 
     public:
-	Team&	operator=(Team const& src); 
+      Team();
+	Team&	operator=(Team const& src);
 
 	bool	operator==(Team const& rhs) const;
 

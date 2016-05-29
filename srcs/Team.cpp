@@ -1,6 +1,6 @@
 #include "Team.hpp"
 
-//Team::Team() {}
+Team::Team() {}
 Team&	Team::operator=(Team const& src) {
 	this->myTitPlayers = src.getTitPlayers();
 	this->myResPlayers = src.getResPlayers();

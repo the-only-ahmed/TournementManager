@@ -12,16 +12,16 @@ class APerson
         int         age;
 
         APerson(std::string name, std::string preName, std::string nat, int age);
-        void        setName(std::string name);
-        void        setPreName(std::string preName);
-        void        setNationality(std::string nationality);
-        void        setAge(int age);
+        void        setName(std::string const name);
+        void        setPreName(std::string const preName);
+        void        setNationality(std::string const nationality);
+        void        setAge(int const age);
 
     public:
-        std::string getName();
-        std::string getPreName();
-        std::string getNat();
-        int         getAge();
+        std::string getName() const;
+        std::string getPreName() const;
+        std::string getNat() const;
+        int         getAge() const;
 };
 
 #endif

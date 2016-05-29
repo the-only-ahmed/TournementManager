@@ -11,7 +11,8 @@ class Refree : public APerson
         RefPost myPost;
 
     public:
-	Refree&	operator=(Refree const& src);
+		Refree(const Refree& src);
+		Refree&	operator=(const Refree& src);
         Refree(std::string name, std::string pName, std::string nat, int age,
 				RefClas clas, RefPost post);
         RefClas getClass() const;

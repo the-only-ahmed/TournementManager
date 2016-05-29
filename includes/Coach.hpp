@@ -10,6 +10,7 @@ class Coach : public APerson
         CoachGrade  myGrade;
 
     public:
+        Coach();
         Coach(std::string name, std::string pName, std::string nat, int age,
 				CoachGrade grade);
         CoachGrade getGrade();
