@@ -15,7 +15,8 @@ NAME = Foot
 INCLUDE_DIR = includes
 SRC_DIR = srcs
 SRC = srcs/main.cpp srcs/APerson.cpp srcs/Coach.cpp srcs/Player.cpp \
- 		srcs/Refree.cpp srcs/Team.cpp srcs/Match.cpp
+ 		srcs/Refree.cpp srcs/Team.cpp srcs/Match.cpp srcs/Competition.cpp \
+		srcs/manager.cpp srcs/TmpBase.cpp
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++11 -I $(INCLUDE_DIR)
 

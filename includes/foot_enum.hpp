@@ -1,6 +1,9 @@
 #ifndef FOOT_ENUM_HPP
 #define FOOT_ENUM_HPP
 
+#include <iostream>
+#include <cstdlib>
+
 enum RefClas {
 	elite = 0,
 	categorie1,
@@ -28,5 +31,12 @@ enum CoachGrade {
 	niveauA_UEFA,
 	niveauB_UEFA
 };
+
+void 	CompeteManager();
+void 	MatchManager();
+void 	TeamManager();
+void 	PlayerManager();
+void 	CoachManager();
+void 	RefreeManager();
 
 #endif
