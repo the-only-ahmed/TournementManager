@@ -30,7 +30,9 @@ void	Match::setScore(int t1, int t2) {
 }
 
 int	Match::getTourNb() const { return this->_numTour; }
+
 Refree	Match::getRef() const { return this->_ref; }
+
 Team	Match::getTeamByNb(int nb) const {
 	if (nb == 0 || nb == 1)
 		return (this->_teams[nb]);

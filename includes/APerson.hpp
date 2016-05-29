@@ -12,6 +12,10 @@ class APerson
         int         age;
 
         APerson(std::string name, std::string preName, std::string nat, int age);
+        void        setName(std::string name);
+        void        setPreName(std::string preName);
+        void        setNationality(std::string nationality);
+        void        setAge(int age);
 
     public:
         std::string getName();
