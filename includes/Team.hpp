@@ -20,8 +20,8 @@ class Team
 
     public:
       Team();
-      Team(std::string name);
-	Team&	operator=(Team const& src);
+      Team(std::string name, int Vic, int los, int draw);
+	//Team&	operator=(Team const& src);
 
 	bool	operator==(Team const& rhs) const;
 
@@ -35,6 +35,11 @@ class Team
         int                 getId() const;
 
         void          setCount(int n);
+        void          setId(int n);
+        void          setTitPlayers(std::list<Player> const& titulaires);
+        void          setResPlayers(std::list<Player> & reservistes);
+        void          setCoach(Coach const& c);
+        void          addPlayer(Player const& pl);
 };
 
 #endif

@@ -2,6 +2,8 @@
 
 int			Player::_count = 0;
 
+Player::Player() : APerson("", "", "", 0) {}
+
 Player::Player(std::string name, std::string pName, std::string nat, int age,
 				PlayerPost post, int num) : APerson(name, pName, nat, age)
 {

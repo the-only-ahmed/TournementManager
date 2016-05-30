@@ -52,6 +52,14 @@ class TmpBase
     static void showPlayer(void);
     static void showCoach(void);
     static void showRefree(void);
+
+            /* GETTERS  */
+    static Competition*  getCompetByID(int id);
+    static Match*        getMatchByID(int id);
+    static Team*         getTeamByID(int id);
+    static Player*       getPlayerByID(int id);
+    static Coach*        getCoachByID(int id);
+    static Refree*       getRefreeByID(int id);
 };
 
 #endif

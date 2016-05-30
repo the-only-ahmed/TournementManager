@@ -103,3 +103,51 @@ void TmpBase::showRefree(void) {
         std::cout << i.getName() << std::endl;
     }
 }
+
+Competition*   TmpBase::getCompetByID(int id) {
+  for (auto &c : TmpBase::_compet) {
+    if (id == c.getId())
+      return &c;
+  }
+  return nullptr;
+}
+
+Match*         TmpBase::getMatchByID(int id) {
+  for (auto &c : TmpBase::_games) {
+    if (id == c.getId())
+      return &c;
+  }
+  return nullptr;
+}
+
+Team*         TmpBase::getTeamByID(int id) {
+  for (auto &c : TmpBase::_teams) {
+    if (id == c.getId())
+      return &c;
+  }
+  return nullptr;
+}
+
+Player*       TmpBase::getPlayerByID(int id) {
+  for (auto &c : TmpBase::_players) {
+    if (id == c.getId())
+      return &c;
+  }
+  return nullptr;
+}
+
+Coach*        TmpBase::getCoachByID(int id) {
+  for (auto &c : TmpBase::_coachs) {
+    if (id == c.getId())
+      return &c;
+  }
+  return nullptr;
+}
+
+Refree*       TmpBase::getRefreeByID(int id) {
+  for (auto &c : TmpBase::_refrees) {
+    if (id == c.getId())
+      return &c;
+  }
+  return nullptr;
+}

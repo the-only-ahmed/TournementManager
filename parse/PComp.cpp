@@ -5,13 +5,14 @@
 void    parseCompete(std::string fileName) {
   std::ifstream myfile;
   myfile.open ("./database/" + fileName);
-  
+
   std::string delimiter = ".";
   std::string name = fileName.substr(0, fileName.find(delimiter));
 
-  std::string   line;
-  int           pos = 0;
-  int           id, nbTour;
+  std::string       line;
+  int               pos = 0;
+  int               id, nbTour;
+  std::list<Match>  games;
 
   while (std::getline (myfile,line))
   {
@@ -22,7 +23,8 @@ void    parseCompete(std::string fileName) {
       case 2: //nbTour
         nbTour = std::stoi(line);
       break;
-      default: //games ID
+      default: //games
+        games.push_back(*TmpBase::getMatchByID(std::stoi(line)));
       break;
     }
     std::cout << line << '\n';
@@ -30,6 +32,7 @@ void    parseCompete(std::string fileName) {
 
   Competition c = Competition(name, nbTour);
   c.setId(id);
+  c.setGames(games);
 
   TmpBase::addCompet(c);
   myfile.close();

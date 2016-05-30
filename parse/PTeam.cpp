@@ -11,7 +11,9 @@ void    parseTeam(std::string fileName) {
 
   std::string   line;
   int           pos = 0;
-  int           id, nbTour;
+  int           id, coachID, win, los, drw;
+  std::list<Player>     titPlayers;
+  std::list<Player>     resPlayers;
 
   while (std::getline (myfile,line))
   {
@@ -20,17 +22,33 @@ void    parseTeam(std::string fileName) {
         id = std::stoi(line);
       break;
       case 2: //nbTour
-        nbTour = std::stoi(line);
+        coachID = std::stoi(line);
       break;
-      default: //games ID
+      case 3: //victoires
+        win = std::stoi(line);
+      break;
+      case 4: //defaites
+        los = std::stoi(line);
+      break;
+      case 5: //matches nuls
+        drw = std::stoi(line);
+      break;
+      case 6 ... 16: //id de joueurs titulaires
+        titPlayers.push_back(*(TmpBase::getPlayerByID(std::stoi(line))));
+      break;
+      default: //id de joueurs reservistes
+        resPlayers.push_back(*(TmpBase::getPlayerByID(std::stoi(line))));
       break;
     }
     std::cout << line << '\n';
   }
 
-  Competition c = Competition(name, nbTour);
-  c.setId(id);
+  Team t = Team(name, win, los, drw);
+  t.setId(id);
+  t.setCoach(*(TmpBase::getCoachByID(coachID)));
+  t.setTitPlayers(titPlayers);
+  t.setResPlayers(resPlayers);
 
-  TmpBase::addCompet(c);
+  TmpBase::addTeam(t);
   myfile.close();
 }

@@ -2,6 +2,8 @@
 
 int			Refree::_count = 0;
 
+Refree::Refree() : APerson("", "", "", 0) {}
+
 Refree&	Refree::operator=(const Refree& src) {
 	setName(src.getName());
 	setPreName(src.getPreName());

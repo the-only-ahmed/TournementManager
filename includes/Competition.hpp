@@ -17,8 +17,8 @@ class Competition
   public:
     Competition(std::string name, int tourNb);
 
-    void                setName(std::string const name);
-    //void              setGames(?);
+    void                setName(std::string const& name);
+    void                setGames(std::list<Match> &games);
 
     void                setCount(int n);
     void                setId(int n);
