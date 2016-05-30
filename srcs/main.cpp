@@ -1,6 +1,8 @@
 #include "foot_enum.hpp"
 
 int     mainMenu() {
+  parseFiles();
+
   int   choice = -1;
   while (choice < 0 || choice > 6) {
     std::cout << "1-Gestion de Competition" << std::endl;

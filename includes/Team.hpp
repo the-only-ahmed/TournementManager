@@ -16,7 +16,7 @@ class Team
         int                 losses;
         int                 draws;
         int                 id;
-        static int          nb;
+        static int          _count;
 
     public:
       Team();
@@ -33,6 +33,8 @@ class Team
         int                 getLosses() const;
         int                 getDraws() const;
         int                 getId() const;
+
+        void          setCount(int n);
 };
 
 #endif

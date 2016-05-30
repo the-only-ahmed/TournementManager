@@ -9,6 +9,8 @@
 class Match
 {
 	private:
+		int id;
+		static int _count;
 		int	_numTour;
 		Refree	_ref;
 		Team	_teams[2];
@@ -20,6 +22,8 @@ class Match
 		void	setRefree(Refree const& ref);
 		void	setTeams(Team t1, Team t2);
 		void	setScore(int t1, int t2);
+		void setId(int n);
+		void setCount(int n);
 
 		int	getTourNb() const;
 		Refree	getRef() const;
@@ -28,6 +32,7 @@ class Match
 		int	getScore(Team t) const;
 		int	getScore(int n) const;
 		std::string	getScore() const;
+		int getId();
 
 // ** EXCEPTIONS ** //
 

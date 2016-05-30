@@ -1,12 +1,12 @@
 #include "Team.hpp"
 
-int	Team::nb = 0;
+int	Team::_count = 0;
 
 Team::Team() {}
 
 Team::Team(std::string name) {
 	this->name = name;
-	this->id = Team::nb++;
+	this->id = Team::_count++;
 }
 
 Team&	Team::operator=(Team const& src) {
@@ -34,3 +34,5 @@ int                 Team::getVictories() const { return this->victories; }
 int                 Team::getLosses() const { return this->losses; }
 int                 Team::getDraws() const { return this->draws; }
 int									Team::getId() const { return this->id; }
+
+void       					Team::setCount(int n) { Team::_count = n; }

@@ -10,7 +10,7 @@ class Competition
   private:
     std::list<Match>  _games;
     std::string       _name;
-    int               _id;
+    int               id;
     int               _nbTour;
     static  int       _count;
 
@@ -19,6 +19,9 @@ class Competition
 
     void                setName(std::string const name);
     //void              setGames(?);
+
+    void                setCount(int n);
+    void                setId(int n);
 
     std::string         getName() const;
     int                 getId() const;

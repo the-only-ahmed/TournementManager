@@ -17,3 +17,4 @@ std::string APerson::getName() const { return this->name; }
 std::string APerson::getPreName() const { return this->preName; }
 std::string APerson::getNat() const { return this->nationality; }
 int         APerson::getAge() const { return this->age; }
+int         APerson::getId() const { return this->id; }

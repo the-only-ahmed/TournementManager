@@ -32,11 +32,19 @@ enum CoachGrade {
 	niveauB_UEFA
 };
 
+void 	parseFiles();
 void 	CompeteManager();
 void 	MatchManager();
 void 	TeamManager();
 void 	PlayerManager();
 void 	CoachManager();
 void 	RefreeManager();
+
+void    parseCompete(std::ifstream &myfile, std::string fileName);
+void    parseMatch(std::ifstream &myfile, std::string fileName);
+void    parseTeam(std::ifstream &myfile, std::string fileName);
+void    parsePlayer(std::ifstream &myfile, std::string fileName);
+void    parseCoach(std::ifstream &myfile, std::string fileName);
+void    parseRefree(std::ifstream &myfile, std::string fileName);
 
 #endif

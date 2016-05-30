@@ -7,8 +7,9 @@
 class Refree : public APerson
 {
     private:
-        RefClas myClas;
-        RefPost myPost;
+        RefClas     myClas;
+        RefPost     myPost;
+        static int  _count;
 
     public:
 		Refree(const Refree& src);
@@ -17,6 +18,8 @@ class Refree : public APerson
 				RefClas clas, RefPost post);
         RefClas getClass() const;
         RefPost getPost() const;
+        void    setId();
+        void    setCount(int n);
 };
 
 #endif
