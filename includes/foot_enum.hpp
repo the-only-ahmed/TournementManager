@@ -51,5 +51,6 @@ void    parseTeam(std::string fileName);
 void    parsePlayer(std::string fileName);
 void    parseCoach(std::string fileName);
 void    parseRefree(std::string fileName);
+void    parseCount(std::string fileName);
 
 #endif

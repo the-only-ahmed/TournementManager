@@ -18,7 +18,7 @@ SRC = srcs/main.cpp srcs/APerson.cpp srcs/Coach.cpp srcs/Player.cpp \
  		srcs/Refree.cpp srcs/Team.cpp srcs/Match.cpp srcs/Competition.cpp \
 		srcs/manager.cpp srcs/TmpBase.cpp parse/parse.cpp parse/PComp.cpp \
 		parse/PCoach.cpp parse/PMatch.cpp parse/PPlayer.cpp parse/PRefree.cpp \
-		parse/PTeam.cpp
+		parse/PTeam.cpp parse/PCount.cpp
 CC = g++
 FLAGS = -Wall -Wextra -Werror -std=c++11 -I $(INCLUDE_DIR)
 

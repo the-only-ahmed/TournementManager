@@ -26,13 +26,14 @@ void    parseFiles() {
   std::list<std::string> files = checkDirectory();
   t_FileMap              mp;
 
-  void (*inputFunctionPtr[6])(std::string);
+  void (*inputFunctionPtr[7])(std::string);
   inputFunctionPtr[0] = parsePlayer;
   inputFunctionPtr[1] = parseCoach;
   inputFunctionPtr[2] = parseRefree;
   inputFunctionPtr[3] = parseTeam;
   inputFunctionPtr[4] = parseMatch;
   inputFunctionPtr[5] = parseCompete;
+  inputFunctionPtr[6] = parseCount;
 
   for (auto &f : files) {
 
@@ -48,6 +49,8 @@ void    parseFiles() {
       mp["coc"].push_back(f);
     else if (f.find(".ref") != std::string::npos)
       mp["ref"].push_back(f);
+    else if (f.find(".count") != std::string::npos)
+      mp["count"].push_back(f);
   }
 
   int i = 0;

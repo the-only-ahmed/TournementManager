@@ -18,19 +18,19 @@ class Match
 	public:
 		Match(Refree const& ref);
 
-		void	setRefree(Refree const& ref);
-		void	setTeams(Team t1, Team t2);
-		void	setScore(int t1, int t2);
-		void setId(int n);
-		void setCount(int n);
+		void					setRefree(Refree const& ref);
+		void					setTeams(Team t1, Team t2);
+		void					setScore(int t1, int t2);
+		void 					setId(int n);
+		static void 	setCount(int n);
 
-		Refree	getRef() const;
-		Team	getTeamByNb(int nb) const;
+		Refree				getRef() const;
+		Team					getTeamByNb(int nb) const;
 
-		int	getScore(Team t) const;
-		int	getScore(int n) const;
-		std::string	getScore() const;
-		int getId();
+		int						getScore(Team t) const;
+		int						getScore(int n) const;
+		int 					getId();
+		std::string		getScore() const;
 
 // ** EXCEPTIONS ** //
 

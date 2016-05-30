@@ -20,7 +20,7 @@ class Competition
     void                setName(std::string const& name);
     void                setGames(std::list<Match> &games);
 
-    void                setCount(int n);
+    static void         setCount(int n);
     void                setId(int n);
 
     std::string         getName() const;

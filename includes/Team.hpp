@@ -34,7 +34,7 @@ class Team
         int                 getDraws() const;
         int                 getId() const;
 
-        void          setCount(int n);
+        static void   setCount(int n);
         void          setId(int n);
         void          setTitPlayers(std::list<Player> const& titulaires);
         void          setResPlayers(std::list<Player> & reservistes);

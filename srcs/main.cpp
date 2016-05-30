@@ -1,8 +1,6 @@
 #include "foot_enum.hpp"
 
 int     mainMenu() {
-  parseFiles();
-
   int   choice = -1;
   while (choice < 0 || choice > 6) {
     std::cout << "1-Gestion de Competition" << std::endl;
@@ -20,21 +18,23 @@ int     mainMenu() {
 }
 
 int     main() {
-    void (*inputFunctionPtr[6])(void);
-    inputFunctionPtr[0] = CompeteManager;
-    inputFunctionPtr[1] = MatchManager;
-    inputFunctionPtr[2] = TeamManager;
-    inputFunctionPtr[3] = PlayerManager;
-    inputFunctionPtr[4] = CoachManager;
-    inputFunctionPtr[5] = RefreeManager;
+  parseFiles();
 
-    while (true) {
-      int choice = mainMenu();
-      if (choice == 0)
-        break;
+  void (*inputFunctionPtr[6])(void);
+  inputFunctionPtr[0] = CompeteManager;
+  inputFunctionPtr[1] = MatchManager;
+  inputFunctionPtr[2] = TeamManager;
+  inputFunctionPtr[3] = PlayerManager;
+  inputFunctionPtr[4] = CoachManager;
+  inputFunctionPtr[5] = RefreeManager;
 
-      inputFunctionPtr[choice-1]();
-    }
+  while (true) {
+    int choice = mainMenu();
+    if (choice == 0)
+      break;
 
-    return 0;
+    inputFunctionPtr[choice-1]();
+  }
+
+  return 0;
 }

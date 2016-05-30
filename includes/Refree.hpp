@@ -17,10 +17,10 @@ class Refree : public APerson
 		    Refree&	operator=(const Refree& src);
         Refree(std::string name, std::string pName, std::string nat, int age,
 				RefClas clas, RefPost post);
-        RefClas getClass() const;
-        RefPost getPost() const;
-        void    setId(int n);
-        void    setCount(int n);
+        RefClas       getClass() const;
+        RefPost       getPost() const;
+        void          setId(int n);
+        static void    setCount(int n);
 };
 
 #endif

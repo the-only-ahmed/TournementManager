@@ -19,7 +19,6 @@ class APerson
         void        setAge(int const age);
 
         virtual void        setId(int n) = 0;
-        virtual void        setCount(int n) = 0;
 
     public:
         std::string getName() const;
