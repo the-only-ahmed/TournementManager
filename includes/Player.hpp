@@ -16,7 +16,7 @@ class Player : public APerson
 				PlayerPost post, int num);
         PlayerPost  getPost();
         int         getNumber();
-        void        setId();
+        void        setId(int n);
         void        setCount(int n);
 };
 

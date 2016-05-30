@@ -16,8 +16,7 @@ Match::MatchException::~MatchException() throw() { return; }
 
 int		Match::_count = 0;
 
-Match::Match(int n, Refree const& ref) : _ref(ref) {
-	this->_numTour = n;
+Match::Match(Refree const& ref) : _ref(ref) {
 	this->id = Match::_count++;
 }
 
@@ -34,8 +33,6 @@ void	Match::setScore(int t1, int t2) {
 	this->_score[0] = t1;
 	this->_score[1] = t2;
 }
-
-int	Match::getTourNb() const { return this->_numTour; }
 
 Refree	Match::getRef() const { return this->_ref; }
 

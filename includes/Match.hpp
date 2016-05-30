@@ -11,13 +11,12 @@ class Match
 	private:
 		int id;
 		static int _count;
-		int	_numTour;
 		Refree	_ref;
 		Team	_teams[2];
 		int	_score[2];
 
 	public:
-		Match(int n, Refree const& ref);
+		Match(Refree const& ref);
 
 		void	setRefree(Refree const& ref);
 		void	setTeams(Team t1, Team t2);
@@ -25,7 +24,6 @@ class Match
 		void setId(int n);
 		void setCount(int n);
 
-		int	getTourNb() const;
 		Refree	getRef() const;
 		Team	getTeamByNb(int nb) const;
 

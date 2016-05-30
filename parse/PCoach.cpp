@@ -2,13 +2,17 @@
 #include "TmpBase.hpp"
 #include <fstream>
 
-void    parseCoach(std::ifstream &myfile, std::string fileName) {
+void    parseCoach(std::string fileName) {
+  std::ifstream myfile;
+  myfile.open ("./database/" + fileName);
+
   std::string delimiter = ".";
   std::string name = fileName.substr(0, fileName.find(delimiter));
 
-  std::string   line;
+  std::string   line, preName, nat;
   int           pos = 0;
-  int           id, nbTour;
+  int           id, age;
+  CoachGrade    grade;
 
   while (std::getline (myfile,line))
   {
@@ -16,17 +20,25 @@ void    parseCoach(std::ifstream &myfile, std::string fileName) {
       case 1: //id
         id = std::stoi(line);
       break;
-      case 2: //nbTour
-        nbTour = std::stoi(line);
+      case 2: //prenom
+        preName = line;
       break;
-      default: //games ID
+      case 3: //nationalite
+        nat = line;
+      break;
+      case 4: //age
+        age = std::stoi(line);
+      break;
+      case 5: //grade de l'entraineur
+        grade = static_cast<CoachGrade>(std::stoi(line));
       break;
     }
     std::cout << line << '\n';
   }
 
-  Competition c = Competition(name, nbTour);
+  Coach c = Coach(name, preName, nat, age, grade);
   c.setId(id);
 
-  TmpBase::addCompet(c);
+  TmpBase::addCoach(c);
+  myfile.close();
 }

@@ -26,10 +26,10 @@ Refree::Refree(std::string name, std::string pName, std::string nat, int age,
 {
     this->myClas = clas;
     this->myPost = post;
-		setId();
+		setId(Refree::_count++);
 }
 
 RefClas Refree::getClass() const { return this->myClas; }
 RefPost Refree::getPost() const { return this->myPost; }
-void    Refree::setId() { this->id = Refree::_count++; }
+void    Refree::setId(int n) { this->id = n; }
 void    Refree::setCount(int n) { Refree::_count = n; }

@@ -24,23 +24,27 @@ std::list<std::string>  checkDirectory() {
 
 void    parseFiles() {
   std::list<std::string> files = checkDirectory();
-  std::ifstream myfile;
+  t_FileMap mp;
 
   for (auto &f : files) {
-    myfile.open ("./database/" + f);
-    if (f.find(".comp") != std::string::npos)
-      parseCompete(myfile, f);
-    else if (f.find(".mat") != std::string::npos)
-      parseMatch(myfile, f);
-    else if (f.find(".tem") != std::string::npos)
-      parseTeam(myfile, f);
-    else if (f.find(".play") != std::string::npos)
-      parsePlayer(myfile, f);
-    else if (f.find(".coc") != std::string::npos)
-      parseCoach(myfile, f);
-    else if (f.find(".ref") != std::string::npos)
-      parseRefree(myfile, f);
 
-    myfile.close();
+    if (f.find(".comp") != std::string::npos)
+      mp["comp"].push_back(f);
+      //parseCompete(myfile, f);
+    else if (f.find(".mat") != std::string::npos)
+      mp["mat"].push_back(f);
+      //parseMatch(myfile, f);
+    else if (f.find(".tem") != std::string::npos)
+      mp["team"].push_back(f);
+      //parseTeam(myfile, f);
+    else if (f.find(".play") != std::string::npos)
+      mp["play"].push_back(f);
+      //parsePlayer(myfile, f);
+    else if (f.find(".coc") != std::string::npos)
+      mp["coc"].push_back(f);
+      //parseCoach(myfile, f);
+    else if (f.find(".ref") != std::string::npos)
+      mp["ref"].push_back(f);
+      //parseRefree(myfile, f);
   }
 }

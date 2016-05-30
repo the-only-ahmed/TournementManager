@@ -2,7 +2,10 @@
 #include "TmpBase.hpp"
 #include <fstream>
 
-void    parseCompete(std::ifstream &myfile, std::string fileName) {
+void    parseCompete(std::string fileName) {
+  std::ifstream myfile;
+  myfile.open ("./database/" + fileName);
+  
   std::string delimiter = ".";
   std::string name = fileName.substr(0, fileName.find(delimiter));
 
@@ -29,4 +32,5 @@ void    parseCompete(std::ifstream &myfile, std::string fileName) {
   c.setId(id);
 
   TmpBase::addCompet(c);
+  myfile.close();
 }

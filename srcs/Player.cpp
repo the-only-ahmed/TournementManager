@@ -7,10 +7,10 @@ Player::Player(std::string name, std::string pName, std::string nat, int age,
 {
     this->myPost = post;
     this->myNum = num;
-		setId();
+		setId(Player::_count++);
 }
 
 PlayerPost  Player::getPost() { return this->myPost; }
 int         Player::getNumber() { return this->myNum; }
-void       	Player::setId() { this->id = Player::_count++; }
+void       	Player::setId(int n) { this->id = n; }
 void       	Player::setCount(int n) { Player::_count = n; }

@@ -3,6 +3,11 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <map>
+#include <list>
+#include <fstream>
+
+typedef std::map<std::string, std::list<std::string>> t_FileMap;
 
 enum RefClas {
 	elite = 0,
@@ -40,11 +45,11 @@ void 	PlayerManager();
 void 	CoachManager();
 void 	RefreeManager();
 
-void    parseCompete(std::ifstream &myfile, std::string fileName);
-void    parseMatch(std::ifstream &myfile, std::string fileName);
-void    parseTeam(std::ifstream &myfile, std::string fileName);
-void    parsePlayer(std::ifstream &myfile, std::string fileName);
-void    parseCoach(std::ifstream &myfile, std::string fileName);
-void    parseRefree(std::ifstream &myfile, std::string fileName);
+void    parseCompete(std::string fileName);
+void    parseMatch(std::string fileName);
+void    parseTeam(std::string fileName);
+void    parsePlayer(std::string fileName);
+void    parseCoach(std::string fileName);
+void    parseRefree(std::string fileName);
 
 #endif

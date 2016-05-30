@@ -2,13 +2,18 @@
 #include "TmpBase.hpp"
 #include <fstream>
 
-void    parseRefree(std::ifstream &myfile, std::string fileName) {
+void    parseRefree(std::string fileName) {
+  std::ifstream myfile;
+  myfile.open ("./database/" + fileName);
+
   std::string delimiter = ".";
   std::string name = fileName.substr(0, fileName.find(delimiter));
 
-  std::string   line;
+  std::string   line, preName, nat;
   int           pos = 0;
-  int           id, nbTour;
+  int           id, age;
+  RefClas       clas;
+  RefPost       post;
 
   while (std::getline (myfile,line))
   {
@@ -16,17 +21,28 @@ void    parseRefree(std::ifstream &myfile, std::string fileName) {
       case 1: //id
         id = std::stoi(line);
       break;
-      case 2: //nbTour
-        nbTour = std::stoi(line);
+      case 2: //prenom
+        preName = line;
       break;
-      default: //games ID
+      case 3: //nationalite
+        nat = line;
+      break;
+      case 4: //age
+        age = std::stoi(line);
+      break;
+      case 5: //classe d'arbitre
+        clas = static_cast<RefClas>(std::stoi(line));
+      break;
+      case 6: //poste d'arbitre
+        post = static_cast<RefPost>(std::stoi(line));
       break;
     }
     std::cout << line << '\n';
   }
 
-  Competition c = Competition(name, nbTour);
-  c.setId(id);
+  Refree ref = Refree(name, preName, nat, age, clas, post);
+  ref.setId(id);
 
-  TmpBase::addCompet(c);
+  TmpBase::addRefree(ref);
+  myfile.close();
 }

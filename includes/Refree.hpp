@@ -18,7 +18,7 @@ class Refree : public APerson
 				RefClas clas, RefPost post);
         RefClas getClass() const;
         RefPost getPost() const;
-        void    setId();
+        void    setId(int n);
         void    setCount(int n);
 };
 

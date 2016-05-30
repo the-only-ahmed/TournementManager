@@ -16,7 +16,7 @@ class Coach : public APerson
 				CoachGrade grade);
 
         CoachGrade getGrade();
-        void       setId();
+        void       setId(int n);
         void       setCount(int n);
 };
 

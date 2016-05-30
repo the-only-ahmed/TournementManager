@@ -18,7 +18,7 @@ class APerson
         void        setNationality(std::string const nationality);
         void        setAge(int const age);
 
-        virtual void        setId() = 0;
+        virtual void        setId(int n) = 0;
         virtual void        setCount(int n) = 0;
 
     public:
