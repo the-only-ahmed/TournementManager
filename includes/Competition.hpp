@@ -25,6 +25,7 @@ class Competition
 
     std::string         getName() const;
     int                 getId() const;
+    static int          getCount();
     int                 getNbTour() const;
     std::list<Match>    getGames() const;
 };

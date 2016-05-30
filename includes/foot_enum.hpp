@@ -53,4 +53,13 @@ void    parseCoach(std::string fileName);
 void    parseRefree(std::string fileName);
 void    parseCount(std::string fileName);
 
+void 		saveChanges();
+void 		saveCount();
+void 		savePlayers();
+void 		saveCoachs();
+void 		saveRefrees();
+void 		saveTeams();
+void 		saveGames();
+void 		saveCompetitions();
+
 #endif

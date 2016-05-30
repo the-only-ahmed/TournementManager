@@ -53,13 +53,21 @@ class TmpBase
     static void showCoach(void);
     static void showRefree(void);
 
-            /* GETTERS  */
+            /* GETTERS BY ID  */
     static Competition*  getCompetByID(int id);
     static Match*        getMatchByID(int id);
     static Team*         getTeamByID(int id);
     static Player*       getPlayerByID(int id);
     static Coach*        getCoachByID(int id);
     static Refree*       getRefreeByID(int id);
+
+            /*  GETTERS */
+    static std::list<Competition>  getCompets(void);
+    static std::list<Match>        getMatchs(void);
+    static std::list<Team>         getTeams(void);
+    static std::list<Player>       getPlayers(void);
+    static std::list<Coach>        getCoachs(void);
+    static std::list<Refree>       getRefrees(void);
 };
 
 #endif

@@ -37,6 +37,7 @@ int                 Team::getVictories() const { return this->victories; }
 int                 Team::getLosses() const { return this->losses; }
 int                 Team::getDraws() const { return this->draws; }
 int									Team::getId() const { return this->id; }
+int        					Team::getCount() { return Team::_count; }
 
 void       					Team::setCount(int n) { Team::_count = n; }
 void       					Team::setId(int n) { this->id = n; }

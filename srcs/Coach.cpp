@@ -11,7 +11,8 @@ Coach::Coach(std::string name, std::string pName, std::string nat, int age,
     setId(Coach::_count++);
 }
 
-CoachGrade Coach::getGrade() { return this->myGrade; }
+CoachGrade Coach::getGrade() const { return this->myGrade; }
+int        Coach::getCount() { return Coach::_count; }
 
 void       Coach::setId(int n) { this->id = n; }
 void       Coach::setCount(int n) { Coach::_count = n; }

@@ -17,11 +17,11 @@ void    parseTeam(std::string fileName) {
 
   while (std::getline (myfile,line))
   {
-    switch (pos++) {
+    switch (++pos) {
       case 1: //id
         id = std::stoi(line);
       break;
-      case 2: //nbTour
+      case 2: //coachID
         coachID = std::stoi(line);
       break;
       case 3: //victoires
@@ -40,7 +40,6 @@ void    parseTeam(std::string fileName) {
         resPlayers.push_back(*(TmpBase::getPlayerByID(std::stoi(line))));
       break;
     }
-    std::cout << line << '\n';
   }
 
   Team t = Team(name, win, los, drw);
@@ -51,4 +50,22 @@ void    parseTeam(std::string fileName) {
 
   TmpBase::addTeam(t);
   myfile.close();
+}
+
+void 		saveTeams() {
+  for (auto &c : TmpBase::getTeams()) {
+    std::ofstream myfile;
+    myfile.open ("./database/" + c.getName() + ".tem");
+
+    myfile << std::to_string(c.getId()) + "\n";
+    myfile << std::to_string(c.getCoach().getId()) + "\n";
+    myfile << std::to_string(c.getVictories()) + "\n";
+    myfile << std::to_string(c.getLosses()) + "\n";
+    myfile << std::to_string(c.getDraws()) + "\n";
+
+    //TODO: add titulaires
+    //TODO: add reserve
+
+    myfile.close();
+  }
 }

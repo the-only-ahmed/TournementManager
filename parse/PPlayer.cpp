@@ -16,7 +16,7 @@ void    parsePlayer(std::string fileName) {
 
   while (std::getline (myfile,line))
   {
-    switch (pos++) {
+    switch (++pos) {
       case 1: //id
         id = std::stoi(line);
       break;
@@ -36,7 +36,6 @@ void    parsePlayer(std::string fileName) {
         post = static_cast<PlayerPost>(std::stoi(line));
       break;
     }
-    std::cout << line << '\n';
   }
 
   Player pl = Player(name, preName, nat, age, post, number);
@@ -44,4 +43,20 @@ void    parsePlayer(std::string fileName) {
 
   TmpBase::addPlayer(pl);
   myfile.close();
+}
+
+void 		savePlayers() {
+  for (auto &c : TmpBase::getPlayers()) {
+    std::ofstream myfile;
+    myfile.open ("./database/" + c.getName() + ".play");
+
+    myfile << std::to_string(c.getId()) + "\n";
+    myfile << c.getPreName() + "\n";
+    myfile << c.getNat() + "\n";
+    myfile << std::to_string(c.getAge()) + "\n";
+    myfile << std::to_string(c.getNumber()) + "\n";
+    myfile << std::to_string(static_cast<int>(c.getPost())) + "\n";
+
+    myfile.close();
+  }
 }

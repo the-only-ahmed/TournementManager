@@ -17,8 +17,8 @@ void    parseMatch(std::string fileName) {
 
   while (std::getline (myfile,line))
   {
-    switch (pos++) {
-      case 1: //id
+    switch (++pos) {
+      case 1: //id de l'arbitre
         ref = *(TmpBase::getRefreeByID(std::stoi(line)));
       break;
       case 2: //equipe a domicile
@@ -34,7 +34,6 @@ void    parseMatch(std::string fileName) {
         scoreT2 = std::stoi(line);
       break;
     }
-    std::cout << line << '\n';
   }
 
   Match m = Match(ref);
@@ -44,4 +43,19 @@ void    parseMatch(std::string fileName) {
 
   TmpBase::addMatch(m);
   myfile.close();
+}
+
+void 		saveGames() {
+  for (auto &c : TmpBase::getMatchs()) {
+    std::ofstream myfile;
+    myfile.open ("./database/" + std::to_string(c.getId()) + ".mat");
+
+    myfile << std::to_string(c.getRef().getId()) + "\n";
+    myfile << std::to_string(c.getTeamByNb(0).getId()) + "\n";
+    myfile << std::to_string(c.getTeamByNb(1).getId()) + "\n";
+    myfile << std::to_string(c.getScore(0)) + "\n";
+    myfile << std::to_string(c.getScore(1)) + "\n";
+
+    myfile.close();
+  }
 }

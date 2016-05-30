@@ -16,7 +16,7 @@ void    parseCoach(std::string fileName) {
 
   while (std::getline (myfile,line))
   {
-    switch (pos++) {
+    switch (++pos) {
       case 1: //id
         id = std::stoi(line);
       break;
@@ -33,7 +33,6 @@ void    parseCoach(std::string fileName) {
         grade = static_cast<CoachGrade>(std::stoi(line));
       break;
     }
-    std::cout << line << '\n';
   }
 
   Coach c = Coach(name, preName, nat, age, grade);
@@ -41,4 +40,19 @@ void    parseCoach(std::string fileName) {
 
   TmpBase::addCoach(c);
   myfile.close();
+}
+
+void 		saveCoachs() {
+  for (auto &c : TmpBase::getCoachs()) {
+    std::ofstream myfile;
+    myfile.open ("./database/" + c.getName() + ".coc");
+
+    myfile << std::to_string(c.getId()) + "\n";
+    myfile << c.getPreName() + "\n";
+    myfile << c.getNat() + "\n";
+    myfile << std::to_string(c.getAge()) + "\n";
+    myfile << std::to_string(static_cast<int>(c.getGrade())) + "\n";
+
+    myfile.close();
+  }
 }

@@ -33,5 +33,7 @@ Refree::Refree(std::string name, std::string pName, std::string nat, int age,
 
 RefClas Refree::getClass() const { return this->myClas; }
 RefPost Refree::getPost() const { return this->myPost; }
+int     Refree::getCount() { return Refree::_count; }
+
 void    Refree::setId(int n) { this->id = n; }
 void    Refree::setCount(int n) { Refree::_count = n; }

@@ -60,3 +60,13 @@ void    parseFiles() {
     i++;
   }
 }
+
+void      saveChanges() {
+  saveCount();
+  savePlayers();
+  saveCoachs();
+  saveRefrees();
+  saveTeams();
+  saveGames();
+  saveCompetitions();
+}

@@ -104,6 +104,8 @@ void TmpBase::showRefree(void) {
     }
 }
 
+/*  GET BY ID METHODES */
+
 Competition*   TmpBase::getCompetByID(int id) {
   for (auto &c : TmpBase::_compet) {
     if (id == c.getId())
@@ -151,3 +153,12 @@ Refree*       TmpBase::getRefreeByID(int id) {
   }
   return nullptr;
 }
+
+/*  GET METHODES */
+
+std::list<Competition>  TmpBase::getCompets(void) { return TmpBase::_compet; }
+std::list<Match>        TmpBase::getMatchs(void) { return TmpBase::_games; }
+std::list<Team>         TmpBase::getTeams(void) { return TmpBase::_teams; }
+std::list<Player>       TmpBase::getPlayers(void) { return TmpBase::_players; }
+std::list<Coach>        TmpBase::getCoachs(void) { return TmpBase::_coachs; }
+std::list<Refree>       TmpBase::getRefrees(void) { return TmpBase::_refrees; }

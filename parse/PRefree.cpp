@@ -1,6 +1,7 @@
 #include "foot_enum.hpp"
 #include "TmpBase.hpp"
 #include <fstream>
+#include <iostream>
 
 void    parseRefree(std::string fileName) {
   std::ifstream myfile;
@@ -17,7 +18,7 @@ void    parseRefree(std::string fileName) {
 
   while (std::getline (myfile,line))
   {
-    switch (pos++) {
+    switch (++pos) {
       case 1: //id
         id = std::stoi(line);
       break;
@@ -37,7 +38,6 @@ void    parseRefree(std::string fileName) {
         post = static_cast<RefPost>(std::stoi(line));
       break;
     }
-    std::cout << line << '\n';
   }
 
   Refree ref = Refree(name, preName, nat, age, clas, post);
@@ -45,4 +45,20 @@ void    parseRefree(std::string fileName) {
 
   TmpBase::addRefree(ref);
   myfile.close();
+}
+
+void 		saveRefrees() {
+  for (auto &c : TmpBase::getRefrees()) {
+    std::ofstream myfile;
+    myfile.open ("./database/" + c.getName() + ".ref");
+
+    myfile << std::to_string(c.getId()) + "\n";
+    myfile << c.getPreName() + "\n";
+    myfile << c.getNat() + "\n";
+    myfile << std::to_string(c.getAge()) + "\n";
+    myfile << std::to_string(static_cast<int>(c.getClass())) + "\n";
+    myfile << std::to_string(static_cast<int>(c.getPost())) + "\n";
+
+    myfile.close();
+  }
 }

@@ -29,8 +29,9 @@ class Match
 
 		int						getScore(Team t) const;
 		int						getScore(int n) const;
-		int 					getId();
+		int 					getId() const;
 		std::string		getScore() const;
+		static int		getCount();
 
 // ** EXCEPTIONS ** //
 

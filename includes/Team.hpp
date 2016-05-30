@@ -33,6 +33,7 @@ class Team
         int                 getLosses() const;
         int                 getDraws() const;
         int                 getId() const;
+        static int          getCount();
 
         static void   setCount(int n);
         void          setId(int n);

@@ -21,6 +21,7 @@ void  CompeteManager() {
     case -1:
       return;
     case 0:
+      saveChanges();
       exit(0);
     case 1:
       std::cout << "new" << std::endl;

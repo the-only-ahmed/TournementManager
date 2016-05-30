@@ -15,7 +15,8 @@ class Coach : public APerson
         Coach(std::string name, std::string pName, std::string nat, int age,
 				CoachGrade grade);
 
-        CoachGrade      getGrade();
+        CoachGrade      getGrade() const;
+        static int      getCount();
 
         void            setId(int n);
         static void     setCount(int n);

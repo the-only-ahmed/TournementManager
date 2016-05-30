@@ -61,6 +61,8 @@ std::string	Match::getScore() const {
 	return std::to_string(this->_score[0]) + " - " + std::to_string(this->_score[1]);
 }
 
-int		Match::getId() { return this->id; }
+int		Match::getId() const { return this->id; }
+int   Match::getCount() { return Match::_count; }
+
 void 	Match::setId(int n) { this->id = n; }
 void 	Match::setCount(int n) { Match::_count = n; }

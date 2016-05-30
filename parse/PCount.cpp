@@ -10,7 +10,7 @@ void    parseCount(std::string fileName) {
 
   while (std::getline (myfile,line))
   {
-    switch (pos++) {
+    switch (++pos) {
       case 1:
         Competition::setCount(std::stoi(line));
       break;
@@ -31,5 +31,19 @@ void    parseCount(std::string fileName) {
       break;
     }
   }
+  myfile.close();
+}
+
+void 		saveCount() {
+  std::ofstream myfile;
+  myfile.open ("./database/db.count");
+
+  myfile << std::to_string(Competition::getCount()) + "\n";
+  myfile << std::to_string(Match::getCount()) + "\n";
+  myfile << std::to_string(Team::getCount()) + "\n";
+  myfile << std::to_string(Player::getCount()) + "\n";
+  myfile << std::to_string(Coach::getCount()) + "\n";
+  myfile << std::to_string(Refree::getCount()) + "\n";
+
   myfile.close();
 }

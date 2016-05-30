@@ -36,5 +36,6 @@ int     main() {
     inputFunctionPtr[choice-1]();
   }
 
+  saveChanges();
   return 0;
 }
