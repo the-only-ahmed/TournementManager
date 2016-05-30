@@ -63,8 +63,11 @@ void 		saveTeams() {
     myfile << std::to_string(c.getLosses()) + "\n";
     myfile << std::to_string(c.getDraws()) + "\n";
 
-    //TODO: add titulaires
-    //TODO: add reserve
+    for (auto &g : c.getTitPlayers())
+      myfile << std::to_string(g.getId()) + "\n";
+
+    for (auto &g : c.getResPlayers())
+      myfile << std::to_string(g.getId()) + "\n";
 
     myfile.close();
   }

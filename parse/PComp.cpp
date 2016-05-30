@@ -45,7 +45,8 @@ void 		saveCompetitions() {
     myfile << std::to_string(c.getId()) + "\n";
     myfile << std::to_string(c.getNbTour()) + "\n";
 
-    //TODO: ADD GAMES
+    for (auto &g : c.getGames())
+      myfile << std::to_string(g.getId()) + "\n";
 
     myfile.close();
   }
