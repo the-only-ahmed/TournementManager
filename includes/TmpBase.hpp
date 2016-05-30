@@ -46,12 +46,12 @@ class TmpBase
     static void editReferee(size_t pos);
 
             /*  SHOW METHODES */
-    static void showCompet(void);
-    static void showMatch(void);
-    static void showTeam(void);
-    static void showPlayer(void);
-    static void showCoach(void);
-    static void showReferee(void);
+    static void showCompet(bool s);
+    static void showMatch(bool s);
+    static void showTeam(bool s);
+    static void showPlayer(bool s);
+    static void showCoach(bool s);
+    static void showReferee(bool s);
 
             /* GETTERS BY ID  */
     static Competition*  getCompetByID(int id);

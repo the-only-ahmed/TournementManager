@@ -68,40 +68,58 @@ void TmpBase::ediCoach(size_t pos);
 void TmpBase::ediReferee(size_t pos);*/
 
 /*  SHOW METHODES */
-void TmpBase::showCompet(void) {
+void TmpBase::showCompet(bool s) {
+  int n = 0;
   for (auto &i : TmpBase::_compet) {
-        std::cout << i.getName() << std::endl;
-    }
-}
-
-void TmpBase::showMatch(void) {
-  for (auto &i : TmpBase::_games) {
-    std::cout << i.getTeamByNb(0).getName() + " - " + i.getTeamByNb(1).getName() << std::endl;
+    n++;
+    std::string str = s? std::to_string(n) + "- " : "";
+    std::cout << str << i.getName() << std::endl;
   }
 }
 
-void TmpBase::showTeam(void) {
+void TmpBase::showMatch(bool s) {
+  int n = 0;
+  for (auto &i : TmpBase::_games) {
+    n++;
+    std::string str = s? std::to_string(n) + "- " : "";
+    std::cout << str << i.getTeamByNb(0).getName() + " - " + i.getTeamByNb(1).getName() << std::endl;
+  }
+}
+
+void TmpBase::showTeam(bool s) {
+  int n = 0;
   for (auto &i : TmpBase::_teams) {
-        std::cout << i.getName() << std::endl;
-    }
+    n++;
+    std::string str = s? std::to_string(n) + "- " : "";
+    std::cout << str << i.getName() << std::endl;
+  }
 }
 
-void TmpBase::showPlayer(void) {
+void TmpBase::showPlayer(bool s) {
+  int n = 0;
   for (auto &i : TmpBase::_players) {
-        std::cout << i.getName() << std::endl;
-    }
+    n++;
+    std::string str = s? std::to_string(n) + "- " : "";
+    std::cout << str << i.getName() << std::endl;
+  }
 }
 
-void TmpBase::showCoach(void) {
+void TmpBase::showCoach(bool s) {
+  int n = 0;
   for (auto &i : TmpBase::_coachs) {
-        std::cout << i.getName() << std::endl;
-    }
+    n++;
+    std::string str = s? std::to_string(n) + "- " : "";
+    std::cout << str << i.getName() << std::endl;
+  }
 }
 
-void TmpBase::showReferee(void) {
+void TmpBase::showReferee(bool s) {
+  int n = 0;
   for (auto &i : TmpBase::_Referees) {
-        std::cout << i.getName() << std::endl;
-    }
+    n++;
+    std::string str = s? std::to_string(n) + "- " : "";
+    std::cout << str << i.getName() << std::endl;
+  }
 }
 
 /*  GET BY ID METHODES */

@@ -62,4 +62,8 @@ void 		saveTeams();
 void 		saveGames();
 void 		saveCompetitions();
 
+void    createNewComp();
+void    deleteComp();
+void    editComp();
+
 #endif

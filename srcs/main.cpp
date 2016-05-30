@@ -1,4 +1,8 @@
 #include "foot_enum.hpp"
+#include "Coach.hpp"
+#include "Player.hpp"
+#include "Referee.hpp"
+#include "Team.hpp"
 
 int     mainMenu() {
   int   choice = -1;
