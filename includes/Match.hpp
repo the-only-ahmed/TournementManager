@@ -1,7 +1,7 @@
 #ifndef MATCH_HPP
 #define MATCH_HPP
 
-#include "Refree.hpp"
+#include "Referee.hpp"
 #include "Team.hpp"
 #include <stdexcept>
 #include <string>
@@ -11,20 +11,20 @@ class Match
 	private:
 		int id;
 		static int _count;
-		Refree	_ref;
+		Referee	_ref;
 		Team	_teams[2];
 		int	_score[2];
 
 	public:
-		Match(Refree const& ref);
+		Match(Referee const& ref);
 
-		void					setRefree(Refree const& ref);
+		void					setReferee(Referee const& ref);
 		void					setTeams(Team t1, Team t2);
 		void					setScore(int t1, int t2);
 		void 					setId(int n);
 		static void 	setCount(int n);
 
-		Refree				getRef() const;
+		Referee				getRef() const;
 		Team					getTeamByNb(int nb) const;
 
 		int						getScore(Team t) const;

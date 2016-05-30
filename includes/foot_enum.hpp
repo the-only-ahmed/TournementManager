@@ -43,21 +43,21 @@ void 	MatchManager();
 void 	TeamManager();
 void 	PlayerManager();
 void 	CoachManager();
-void 	RefreeManager();
+void 	RefereeManager();
 
 void    parseCompete(std::string fileName);
 void    parseMatch(std::string fileName);
 void    parseTeam(std::string fileName);
 void    parsePlayer(std::string fileName);
 void    parseCoach(std::string fileName);
-void    parseRefree(std::string fileName);
+void    parseReferee(std::string fileName);
 void    parseCount(std::string fileName);
 
 void 		saveChanges();
 void 		saveCount();
 void 		savePlayers();
 void 		saveCoachs();
-void 		saveRefrees();
+void 		saveReferees();
 void 		saveTeams();
 void 		saveGames();
 void 		saveCompetitions();

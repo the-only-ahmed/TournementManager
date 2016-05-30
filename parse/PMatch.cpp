@@ -13,13 +13,13 @@ void    parseMatch(std::string fileName) {
   int           pos = 0;
   int           scoreT1, scoreT2;
   Team          team1, team2;
-  Refree        ref;
+  Referee        ref;
 
   while (std::getline (myfile,line))
   {
     switch (++pos) {
       case 1: //id de l'arbitre
-        ref = *(TmpBase::getRefreeByID(std::stoi(line)));
+        ref = *(TmpBase::getRefereeByID(std::stoi(line)));
       break;
       case 2: //equipe a domicile
         team1 = *(TmpBase::getTeamByID(std::stoi(line)));

@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-void    parseRefree(std::string fileName) {
+void    parseReferee(std::string fileName) {
   std::ifstream myfile;
   myfile.open ("./database/" + fileName);
 
@@ -40,15 +40,15 @@ void    parseRefree(std::string fileName) {
     }
   }
 
-  Refree ref = Refree(name, preName, nat, age, clas, post);
+  Referee ref = Referee(name, preName, nat, age, clas, post);
   ref.setId(id);
 
-  TmpBase::addRefree(ref);
+  TmpBase::addReferee(ref);
   myfile.close();
 }
 
-void 		saveRefrees() {
-  for (auto &c : TmpBase::getRefrees()) {
+void 		saveReferees() {
+  for (auto &c : TmpBase::getReferees()) {
     std::ofstream myfile;
     myfile.open ("./database/" + c.getName() + ".ref");
 

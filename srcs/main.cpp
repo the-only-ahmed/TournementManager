@@ -26,7 +26,7 @@ int     main() {
   inputFunctionPtr[2] = TeamManager;
   inputFunctionPtr[3] = PlayerManager;
   inputFunctionPtr[4] = CoachManager;
-  inputFunctionPtr[5] = RefreeManager;
+  inputFunctionPtr[5] = RefereeManager;
 
   while (true) {
     int choice = mainMenu();

@@ -7,7 +7,7 @@
 #include "Team.hpp"
 #include "Player.hpp"
 #include "Coach.hpp"
-#include "Refree.hpp"
+#include "Referee.hpp"
 #include <list>
 
 class TmpBase
@@ -18,7 +18,7 @@ class TmpBase
     static std::list<Team>          _teams;
     static std::list<Player>        _players;
     static std::list<Coach>         _coachs;
-    static std::list<Refree>        _refrees;
+    static std::list<Referee>        _Referees;
 
   public:
             /*  ADD METHODES  */
@@ -27,7 +27,7 @@ class TmpBase
     static void addTeam(Team const& c);
     static void addPlayer(Player const& c);
     static void addCoach(Coach const& c);
-    static void addRefree(Refree const& c);
+    static void addReferee(Referee const& c);
 
             /*  REMOVE METHODES */
     static void deleteCompet(size_t pos);
@@ -35,7 +35,7 @@ class TmpBase
     static void deleteTeam(size_t pos);
     static void deletePlayer(size_t pos);
     static void deleteCoach(size_t pos);
-    static void deleteRefree(size_t pos);
+    static void deleteReferee(size_t pos);
 
             /*  EDIT METHODES */
     static void editCompet(size_t pos);
@@ -43,7 +43,7 @@ class TmpBase
     static void editTeam(size_t pos);
     static void editPlayer(size_t pos);
     static void editCoach(size_t pos);
-    static void editRefree(size_t pos);
+    static void editReferee(size_t pos);
 
             /*  SHOW METHODES */
     static void showCompet(void);
@@ -51,7 +51,7 @@ class TmpBase
     static void showTeam(void);
     static void showPlayer(void);
     static void showCoach(void);
-    static void showRefree(void);
+    static void showReferee(void);
 
             /* GETTERS BY ID  */
     static Competition*  getCompetByID(int id);
@@ -59,7 +59,7 @@ class TmpBase
     static Team*         getTeamByID(int id);
     static Player*       getPlayerByID(int id);
     static Coach*        getCoachByID(int id);
-    static Refree*       getRefreeByID(int id);
+    static Referee*       getRefereeByID(int id);
 
             /*  GETTERS */
     static std::list<Competition>  getCompets(void);
@@ -67,7 +67,7 @@ class TmpBase
     static std::list<Team>         getTeams(void);
     static std::list<Player>       getPlayers(void);
     static std::list<Coach>        getCoachs(void);
-    static std::list<Refree>       getRefrees(void);
+    static std::list<Referee>       getReferees(void);
 };
 
 #endif

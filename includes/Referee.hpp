@@ -1,10 +1,10 @@
-#ifndef REFREE_HPP
-#define REFREE_HPP
+#ifndef Referee_HPP
+#define Referee_HPP
 
 #include "APerson.hpp"
 #include "foot_enum.hpp"
 
-class Refree : public APerson
+class Referee : public APerson
 {
     private:
         RefClas     myClas;
@@ -12,10 +12,10 @@ class Refree : public APerson
         static int  _count;
 
     public:
-        Refree();
-		    Refree(const Refree& src);
-		    Refree&	operator=(const Refree& src);
-        Refree(std::string name, std::string pName, std::string nat, int age,
+        Referee();
+		    Referee(const Referee& src);
+		    Referee&	operator=(const Referee& src);
+        Referee(std::string name, std::string pName, std::string nat, int age,
 				RefClas clas, RefPost post);
 
         RefClas       getClass() const;

@@ -1,6 +1,6 @@
 #include "Coach.hpp"
 #include "Player.hpp"
-#include "Refree.hpp"
+#include "Referee.hpp"
 #include "Team.hpp"
 #include "foot_enum.hpp"
 
@@ -54,6 +54,6 @@ void  CoachManager() {
   std::cout << "CoachManager" << std::endl;
 }
 
-void  RefreeManager() {
-  std::cout << "RefreeManager" << std::endl;
+void  RefereeManager() {
+  std::cout << "RefereeManager" << std::endl;
 }

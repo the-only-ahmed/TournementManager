@@ -29,7 +29,7 @@ void    parseFiles() {
   void (*inputFunctionPtr[7])(std::string);
   inputFunctionPtr[0] = parsePlayer;
   inputFunctionPtr[1] = parseCoach;
-  inputFunctionPtr[2] = parseRefree;
+  inputFunctionPtr[2] = parseReferee;
   inputFunctionPtr[3] = parseTeam;
   inputFunctionPtr[4] = parseMatch;
   inputFunctionPtr[5] = parseCompete;
@@ -65,7 +65,7 @@ void      saveChanges() {
   saveCount();
   savePlayers();
   saveCoachs();
-  saveRefrees();
+  saveReferees();
   saveTeams();
   saveGames();
   saveCompetitions();

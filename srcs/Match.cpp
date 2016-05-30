@@ -16,11 +16,11 @@ Match::MatchException::~MatchException() throw() { return; }
 
 int		Match::_count = 0;
 
-Match::Match(Refree const& ref) : _ref(ref) {
+Match::Match(Referee const& ref) : _ref(ref) {
 	this->id = Match::_count++;
 }
 
-void	Match::setRefree(Refree const& ref) {
+void	Match::setReferee(Referee const& ref) {
 	this->_ref = ref;
 }
 
@@ -34,7 +34,7 @@ void	Match::setScore(int t1, int t2) {
 	this->_score[1] = t2;
 }
 
-Refree	Match::getRef() const { return this->_ref; }
+Referee	Match::getRef() const { return this->_ref; }
 
 Team	Match::getTeamByNb(int nb) const {
 	if (nb == 0 || nb == 1)

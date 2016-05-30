@@ -27,7 +27,7 @@ void    parseCount(std::string fileName) {
         Coach::setCount(std::stoi(line));
       break;
       case 6:
-        Refree::setCount(std::stoi(line));
+        Referee::setCount(std::stoi(line));
       break;
     }
   }
@@ -43,7 +43,7 @@ void 		saveCount() {
   myfile << std::to_string(Team::getCount()) + "\n";
   myfile << std::to_string(Player::getCount()) + "\n";
   myfile << std::to_string(Coach::getCount()) + "\n";
-  myfile << std::to_string(Refree::getCount()) + "\n";
+  myfile << std::to_string(Referee::getCount()) + "\n";
 
   myfile.close();
 }

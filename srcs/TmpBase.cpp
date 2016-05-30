@@ -6,7 +6,7 @@ std::list<Match>         TmpBase::_games;
 std::list<Team>          TmpBase::_teams;
 std::list<Player>        TmpBase::_players;
 std::list<Coach>         TmpBase::_coachs;
-std::list<Refree>        TmpBase::_refrees;
+std::list<Referee>        TmpBase::_Referees;
 
 /*  ADD METHODES  */
 void TmpBase::addCompet(Competition const& c) { TmpBase::_compet.push_back(c); }
@@ -14,7 +14,7 @@ void TmpBase::addMatch(Match const& c)  { TmpBase::_games.push_back(c); }
 void TmpBase::addTeam(Team const& c)  { TmpBase::_teams.push_back(c); }
 void TmpBase::addPlayer(Player const& c)  { TmpBase::_players.push_back(c); }
 void TmpBase::addCoach(Coach const& c)  { TmpBase::_coachs.push_back(c); }
-void TmpBase::addRefree(Refree const& c)  { TmpBase::_refrees.push_back(c); }
+void TmpBase::addReferee(Referee const& c)  { TmpBase::_Referees.push_back(c); }
 
 /*  REMOVE METHODES */
 void TmpBase::deleteCompet(size_t pos) {
@@ -52,11 +52,11 @@ void TmpBase::deleteCoach(size_t pos) {
   TmpBase::_coachs.erase(it);
 }
 
-void TmpBase::deleteRefree(size_t pos) {
-  std::list<Refree>::iterator it = TmpBase::_refrees.begin();
+void TmpBase::deleteReferee(size_t pos) {
+  std::list<Referee>::iterator it = TmpBase::_Referees.begin();
   for (size_t i = 0; i < pos; i++)
     it++;
-  TmpBase::_refrees.erase(it);
+  TmpBase::_Referees.erase(it);
 }
 
 /*  EDIT METHODES */
@@ -65,7 +65,7 @@ void TmpBase::ediMatch(size_t pos);
 void TmpBase::ediTeam(size_t pos);
 void TmpBase::ediPlayer(size_t pos);
 void TmpBase::ediCoach(size_t pos);
-void TmpBase::ediRefree(size_t pos);*/
+void TmpBase::ediReferee(size_t pos);*/
 
 /*  SHOW METHODES */
 void TmpBase::showCompet(void) {
@@ -98,8 +98,8 @@ void TmpBase::showCoach(void) {
     }
 }
 
-void TmpBase::showRefree(void) {
-  for (auto &i : TmpBase::_refrees) {
+void TmpBase::showReferee(void) {
+  for (auto &i : TmpBase::_Referees) {
         std::cout << i.getName() << std::endl;
     }
 }
@@ -146,8 +146,8 @@ Coach*        TmpBase::getCoachByID(int id) {
   return nullptr;
 }
 
-Refree*       TmpBase::getRefreeByID(int id) {
-  for (auto &c : TmpBase::_refrees) {
+Referee*       TmpBase::getRefereeByID(int id) {
+  for (auto &c : TmpBase::_Referees) {
     if (id == c.getId())
       return &c;
   }
@@ -161,4 +161,4 @@ std::list<Match>        TmpBase::getMatchs(void) { return TmpBase::_games; }
 std::list<Team>         TmpBase::getTeams(void) { return TmpBase::_teams; }
 std::list<Player>       TmpBase::getPlayers(void) { return TmpBase::_players; }
 std::list<Coach>        TmpBase::getCoachs(void) { return TmpBase::_coachs; }
-std::list<Refree>       TmpBase::getRefrees(void) { return TmpBase::_refrees; }
+std::list<Referee>       TmpBase::getReferees(void) { return TmpBase::_Referees; }
